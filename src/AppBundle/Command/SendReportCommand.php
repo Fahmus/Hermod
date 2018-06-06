@@ -59,6 +59,6 @@ class SendReportCommand extends ContainerAwareCommand
         $message = $this->getMessage($to, $cc);
 
         $mailer->send($message);
-        $io->success('[' . date("Y-m-d h:i:s") . '] - Message sended to: "'. $to .'" cc: "'. implode(', ', $cc) .'"');
+        $io->success('[' . date("Y-m-d h:i:s") . '] - Message sent to: "'. $to .'" cc: "'. implode(', ', $cc) .'"');
     }
 }
