@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 
 WORKDIR /srv/hermod
 
@@ -24,7 +24,6 @@ RUN BUILD_DEPS="g++ libicu-dev" && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     $BUILD_DEPS \
-    libicu52 \
 	&& docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $BUILD_DEPS \
